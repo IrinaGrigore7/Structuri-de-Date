@@ -1,0 +1,35 @@
+GRIGORE IRINA-DOMNICA
+315CB
+
+Tema este impartita in 4 fisiere: main.c, Trie.h, FSCommands.h, StringUtils.h.
+
+Main.c: in main se face citirea de la tastatura. Pentru fiecare linie citita se 
+ia primul cuvant care reprezinta comanda, intr-un buffer se pune restul liniei, 
+apoi se apeleaza functia executeCommand, care in functie de comanda apeleaza functia
+corespunzatoare si verifica numarula parametilor pentru a da mesajele de eroare.
+
+In Trie.h sunt functiile de alocare a unui nod dintr-un trie, functia de inserare
+a unui string in arbore, functia de cautare care returneaza 1-daca stringul a fost gasit,
+0-in caz contrar, inca o functie de cautare care returneaza pointer la un nod din arbore,
+in cazul in care cuvantul a fost gasit, functia de verificare daca arborele este gol,
+functia de stergere a unui nod din arbore, functia de distrugere a arborelui,
+functia de afisare a continutului arborelui, functie de numarare a tuturor copiilor unui nod.
+
+In FSCommands.h este apelata functia de canCreate unde se verifica daca pentru anumite 
+functii se poate crea calea, apoi sunt apelate functiile de creare a directoarelor si 
+fisierelor, unde se verifica daca directoarele, respectiv fisierele exista deja, sau
+daca calea pana la ele exista sau nu; functie de schimbare a directoarului curent; 
+functii de afisare a directoarelor, fisierelor din directorul curent, respectiv calea 
+absoluta pana la directorul curent;functii de stergere a directoarelor si a fisierelor;
+functia de mutare a unui fisier in alt director, precum si functia de copiere a unui 
+fisier in alt director.
+
+In StringUtils.h sunt functiile care prelucreaza stringul primit ca parametru (concateneaza, 
+il separa dupa un anumit delimitator) si care este utilizat in alte functii. De asemenea, 
+mai sunt prezente functia de obtinere a numeleui unui fisier, functii de verificare daca 
+se porneste din root, respectiv din directorul curent, precum si functia in care
+este formata calea absoluta.
+
+
+
+
