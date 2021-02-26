@@ -1,0 +1,56 @@
+GRIGORE IRINA-DOMNICA
+315CB
+
+La implementarea acestei teme am folosit liste simplu inlantuite. Programul meu 
+este alcatuit din 3 fisiere: 2 fisiere .c si unul .h.
+
+In fisierul tlista.h am definit structurile: lista LC care imi stocheaza toate 
+cadurile, lista LSC in care sunt retinute mai multe carduri introduse pe aceeasi 
+pozitie, in structura Card retin informatiile despre fiecare card in parte, 
+precum si istoricul care memoreaza toate operatiile realizate pe cardul respectiv.
+
+In fisierul tema_atm.c am main-ul. Pe langa declarearea si initializarea variabilelor, 
+in main fac citirea si scrierea din, respectiv in fisier. Daca operatia citita 
+este "add_card" atunci creeaza cardul cu datele specificate si il introduce in 
+baza de date. Inainte de a parcurge lista LC, se calculeaza pozitia pe care urmeaza 
+introdus cardul. Daca la parcurgerea listei se gaseste pozitia pe care trebuie 
+inserat cardul atunci se apleaza functia de AdaugareCard. In cazul in care contorul 
+care imi numara cate carduri au fost introduse in lista depaseste numarul maxim de 
+carduri atunci fac redimensionarea listei. Pe langa lista in care am deja inserate 
+carduri, mai iau o lista auxiliara in care copiez elementele din lista veche si 
+inserez in ea carduri pana se atinge din nou numarul maxim de carduri.  
+
+In operatia de "delete_card", parcurg lista pana intalnesc cardul care trebuie sters
+si apelez functia de EliminareCard care imi sterge cardul si imi reface legaturile.
+
+Daca operatia este "reverse_transaction", atunci apelez functia de AnulareTranzactie.
+In aceasta functie parcurg lista iar daca soldul cardului este mai mare decat suma 
+care trebuie retrasa atunci operatia retrage suma de pa cardul destinatie si o 
+pune pe cardul sursa si sterge din istoricul cardului destinatie aceasta operatie, 
+precum si ca tranferul a fost facut, altfel afiseaza un mesaj in fisierul de output. 
+
+Operatia "unblock_card" apeleaza functia de DeblocareCard care imi parcurge lista 
+si imi schimba statusul in ACTIVE.
+
+Operatia "show" apeleaza functia de AfisareCarduri asta daca dupa numele operatiei nu are 
+un anumit numar de card. In acest caz afiseaza informatiile despre toate cardurile, 
+iar in cazul in care apare numarul cardului, se afiseaza informatii doar despre cardul respectiv.
+
+Operatia "insert_card" verifica daca PIN-ul a fost introdus gresit de mai mult de 3 ori 
+si imi printeaza un mesaj in fisierul de output, iar daca nu a ajuns la 3 atunci 
+apeleaza functia de Inserarecard.
+
+Operatiile "recharge" si "cash_withdrawal", apeleaza functia de DepunereNumerar care 
+adauga bani pe cardul introdus, respectiv functia retragereNumerar care retrage 
+bani de pe cardul introdus. Operatia "balance_inquiry" apeleaza functia VizualizareSoldCurent 
+care afiseaza soldul curent.
+
+Operatia de "transfer_funds" apeleaza functia Tranzactie care tranfera bani de pe 
+cardul sursa in cardul destinatie. In cazul in care cardul sursa nu are suficienti 
+bani, atunci se va afisa un mesaj in fisierul de iesire.
+
+Operatia "pin_change" apeleaza functia SchimbarePin care schimba pinul unui anumit 
+card doar daca acesta este valid, iar operatia "cancel" apeleaza functia RetragereCard
+care deconecteaza cardul.
+
+Local am obtinut 97 de puncte, iar pe vmchecker 87.
